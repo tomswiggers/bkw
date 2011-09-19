@@ -1,0 +1,10 @@
+{% if latest_review_list %}
+    <div class="item">
+    {% for review in latest_review_list %}
+      <h2>{{ review.title }}</h2>
+      <p>{{ review.body }}</p>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No reviews are available.</p>
+{% endif %}
