@@ -7,12 +7,13 @@ class Review(models.Model):
     ('D2', 'Dames2'),
   )
 
-  title = models.CharField(max_length=100)
-  home = models.CharField(max_length=50)
-  visitor = models.CharField(max_length=50)
-  body = models.TextField()
-  team = models.CharField(max_length=2, choices=TEAM_CHOICES)
-  match_date = models.DateTimeField('date match')
+  home = models.CharField('Thuis', max_length=50)
+  visitor = models.CharField('Bezoekers', max_length=50)
+  points_home = models.IntegerField('Punten thuis')
+  points_visitor = models.IntegerField('Punten bezoekers')
+  body = models.TextField('Beschrijving')
+  team = models.CharField('Ploeg', max_length=2, choices=TEAM_CHOICES)
+  match_date = models.DateField('match datum')
 
   def __unicode__(self):
     return self.home + " - " + self.visitor

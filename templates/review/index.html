@@ -1,10 +1,12 @@
 {% if latest_review_list %}
+  {% for review in latest_review_list %}
     <div class="item">
-    {% for review in latest_review_list %}
-      <h2>{{ review.title }}</h2>
-      <p>{{ review.body }}</p>
-    {% endfor %}
+      <h2>{{ review }}</h2>
+      <p class="points">{{ review.points_home }} - {{ review.points_visitor }}</p>
+      <p class="date">{{ review.match_date }}</p>
+      <p class="body">{{ review.body }}</p>
     </div>
+  {% endfor %}
 {% else %}
-    <p>No reviews are available.</p>
+  <p>No reviews are available.</p>
 {% endif %}
