@@ -4,7 +4,13 @@
       <h2>{{ review }}</h2>
       <p class="points">{{ review.points_home }} - {{ review.points_visitor }}</p>
       <p class="date">{{ review.match_date }}</p>
-      <p class="body">{{ review.body }}</p>
+      <p class="body">{{ review.body|linebreaksbr }}</p>
+      <p class="quarters">
+        <span>Q1: {{ review.points_q1_home }} - {{ review.points_q1_visitor }} / </span>
+        <span>Q2: {{ review.points_q2_home }} - {{ review.points_q2_visitor }} / </span>
+        <span>Q3: {{ review.points_q3_home }} - {{ review.points_q3_visitor }} / </span>
+        <span>Q4: {{ review.points_q4_home }} - {{ review.points_q4_visitor }}</span>
+      </p>
     </div>
   {% endfor %}
 {% else %}
