@@ -9,3 +9,19 @@ def index(request):
         'latest_review_list': latest_review_list,
     })
     return HttpResponse(t.render(c))
+
+def indexH1(request):
+    latest_review_list = Review.objects.filter(team="H1").order_by('-match_date')[:5]
+    t = loader.get_template('review/index.html')
+    c = Context({
+        'latest_review_list': latest_review_list,
+    })
+    return HttpResponse(t.render(c))
+
+def indexD1(request):
+    latest_review_list = Review.objects.filter(team="D1").order_by('-match_date')[:5]
+    t = loader.get_template('review/index.html')
+    c = Context({
+        'latest_review_list': latest_review_list,
+    })
+    return HttpResponse(t.render(c))
