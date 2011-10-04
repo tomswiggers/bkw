@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     (r'^reviews/$', 'review.views.index'),
     (r'^reviews/h1/$', 'review.views.indexH1'),
     (r'^reviews/d1/$', 'review.views.indexD1'),
+    (r'^reviews/vets/$', 'review.views.indexVets'),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
