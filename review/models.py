@@ -5,7 +5,7 @@ class Review(models.Model):
     ('H1', 'Heren'),
     ('D1', 'Dames1'),
     ('D2', 'Dames2'),
-    ('VETS', 'Vets'),
+    ('V', 'Vets'),
   )
 
   home = models.CharField('Thuis', max_length=50)
