@@ -27,7 +27,7 @@ def indexD1(request):
     return HttpResponse(t.render(c))
 
 def indexVets(request):
-    latest_review_list = Review.objects.filter(team="VETS").order_by('-match_date')[:5]
+    latest_review_list = Review.objects.filter(team="V").order_by('-match_date')[:5]
     t = loader.get_template('review/index.html')
     c = Context({
         'latest_review_list': latest_review_list,
